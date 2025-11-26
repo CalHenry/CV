@@ -14,8 +14,8 @@
   = #personal-info.name\
   #link("https://www.github.com/calhenry", "github.com/calhenry") |
   #link("mailto:" + personal-info.email, personal-info.email) |
-  #personal-info.phone |
-  #link("https://www.linkedin.com/in/" + personal-info.name_lower, "linkedin.com/" + personal-info.name_lower)
+  #link("https://www.linkedin.com/in/" + personal-info.name_lower, "linkedin.com/" + personal-info.name_lower) |
+  #link(personal-info.phone_fr) 
 ]
 
 //Experience
