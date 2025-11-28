@@ -63,7 +63,7 @@
   //
   - Développement et déploiement de modèles ML supervisés/non-supervisés avec optimisation d'hyperparamètres
   - Segmentation de clients
-    ], []
+    ], [_2024 - 2025_]
 )
 #v(-1.3em) // Réduire l'espace interligne
 - #entry(
