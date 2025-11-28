@@ -2,24 +2,60 @@
 #import "@preview/cv-soft-and-hard:0.1.0": styling, section, entry, subsection, python, typst-logo
 #import "@preview/sicons:15.13.0": *
 #import "personal-info.typ"
-// personal-info.typ is a module that works as secret environment variables. ex: #let phone = "0123456789"
+// personal-info.typ is a module that works as secret environment variables. ex: #let email = "0123456789"
 
 #set text(lang: "fr")
 
 #set document(author: personal-info.name, title: "CV" + personal-info.name)
 #show: styling
-#set page(margin: (top: 1.7cm))
+
+#set page(margin: (top: 1.8cm))
+#set page(margin: (bottom: 1.8cm))
 
 #align(center)[
+
   = #personal-info.name\
-  #link("https://www.github.com/calhenry", "github.com/calhenry") |
-  #link("mailto:" + personal-info.email, personal-info.email) |
-  #link("https://www.linkedin.com/in/" + personal-info.name_lower, "linkedin.com/" + personal-info.name_lower) |
+  #v(0.8em)
+  #text(strong("Data Scientist"), size:14pt) \
+  #linebreak()
+  #link("https://www.github.com/calhenry", "github.com/calhenry") ·
+  #link("mailto:" + personal-info.email, personal-info.email) ·
+  #link("https://www.linkedin.com/in/" + personal-info.name_lower, "linkedin.com/" + personal-info.name_lower) ·
   #link(personal-info.phone_fr)
+
+
+  
 ]
+#v(0.5em)
+#section(text(size: 14pt, [Formation]))
+#entry(
+  [
+    *Expert en ingénierie et science des données* (_OpenClassrooms_)
+  - 9 projets professionnalisants de machine learning 
+  ],
+  [_2024 - 2025_]
+)
+
+#entry(
+  [
+    *Master 2 Development Economics* (_Université Paris 1 Panthéon Sorbonne_)
+    - Analyse économique appliquée au développement : évaluation de politiques, enjeux de mondialisation et développement durable. Économétrie, théorie économique
+    - Traitements BigData
+  ],
+  [_2022 - 2023_]
+)
+
+#entry(
+  [
+    *Master 1 Économie Quantitative* (_CY Cergy-Paris Université_)
+    - Économétrie, évaluation de politiques publiques, mathématiques, séries temporelles
+  ],
+  [_2021 - 2022_],
+)
 
 //Experience
-#section("Expérience")
+//#section("Expérience")
+#section(text(size: 14pt, [Expérience]))
 // #set list(spacing: 0.5em)
 #entry(
   [
@@ -32,12 +68,12 @@
 #v(-1.3em) // Réduire l'espace interligne
 - #entry(
   [
-  *Moteur de classification multimodal* _(images + texte)_ \
-  Contexte : Étude de faisabilité d'un système de classification automatique combinant analyse visuelle et textuelle pour la catégorisation de produits e-commerce. \ NLP : BERT pour classification de texte avec tokenisation et optimisation des hyperparamètres \ Computer Vision : Implémentation VGG16 pré-entraîné avec data augmentation. \
-  Résultats : Précision de 95% sur dataset de test, modèle NLP meilleur que multimodal. \
+  *Moteur de classification multimodal* _(image + texte)_ \
+  Contexte : Étude de faisabilité d'un système de classification automatique combinant analyse visuelle et textuelle pour la catégorisation de produits e-commerce. \ NLP : BERT pour classification de texte avec tokenisation et optimisation des hyperparamètres \ Computer Vision : Implémentation VGG16 pré-entraîné avec data augmentation \
+  Résultats : Précision de 95% sur dataset de test, modèle NLP meilleur que multimodal \
   Librairies : #link("https://www.tensorflow.org", `tensorflow`) et #link("https://huggingface.co/docs/transformers/index", `transformers`)
   ], []
-)
+) 
 #v(-1.3em)
 - #entry(
   [
@@ -47,7 +83,7 @@
   Déployer le modèle à l'aide d'une API \
   Librairies : #link("https://scikit-learn.org", `scikit-learn`), #link("https://mlflow.org", `mlflow`) et #link("https://fastapi.tiangolo.com", `fastapi`)
   ], []
-)
+) 
 #v(-1.3em)
 - #entry(
   [
@@ -55,7 +91,7 @@
   Contexte : Développement d’un pipeline Big Data pour l’extraction et l’analyse de features d’images à partir de grands volumes de données, en utilisant cluster et des outils cloud. \
   Librairies : #link("https://spark.apache.org/docs/latest/api/python/index.html", `pyspark`), #link("https://www.tensorflow.org", `tensorflow`)
   ], []
-)
+) 
 
 #entry(
   [
@@ -65,7 +101,7 @@
   ],
     [_09/2023 - 08/2024_]
 )
-
+#v(-1.4em)
 #entry(
   [
     *Stage Chargé d'étude de données sociales* (_Ministère du Travail et de la Santé_) #box(baseline: 20%, [#sicon(slug: "r", size: 1.2em, icon-color: "default") ])
@@ -80,38 +116,52 @@
     - Recherche sur les discriminations de genre et ethniques
     - Collecte et traitement des données. Statistiques descriptives
   ],
-  [_12/2023 - 04/2024_ #linebreak(justify: false) _05/2022 - 08/2022_],
+  [_12/2022 - 04/2023_ #linebreak(justify: false) _05/2022 - 08/2022_], 
 )
 
-#section("Formation")
-#entry(
-  [
-    *Expert en ingénierie et science des données* (_OpenClassrooms_)
-  - 9 projets professionnalisants de machine learning
-  ],
-  [_2025 - 2026_]
-)
 
-#entry(
-  [
-    *Master 2 Development Economics* (_Université Paris 1 Panthéon Sorbonne_)
-    - Formation en analyse économique appliquée au développement : évaluation de politiques, enjeux de mondialisation et développement durable
-    - Cours d'économétrie, théorie économique,
-    - Traitements BigData
-  ],
-  [_2023 - 2024_]
-)
+
+
+// #pagebreak()
+
+#section(text(size: 14pt, [Projets personnels]))
 
 #entry(
   [
-    *Master 1 Économie Quantitative* (_CY Cergy-Paris Université_)
-    - Économétrie, évaluation de politiques publiques, mathématiques, séries temporelles
+    *#link("https://github.com/CalHenry/job-scraper-llm-comparison", `Wildchat-1M clustering`)* -
+    _NLP sur un dataset d'1 million de conversations ChatGPT _ #python \  
+  - Objectifs : Segmenter les conversations par similitude sémantique. Optimiser le pipeline pour un volume de données supérieur à la RAM disponible.
+  - Librairies : #link("https://duckdb.org/", `Duckdb`), #link("https://docs.pola.rs", `polars`), #link("https://scikit-learn.org", `scikit-learn`)
   ],
-  [_2022 - 2023_],
+  [_11/2025_]
+)
+
+#entry(
+  [
+    *#link("https://github.com/CalHenry/job-scraper-llm-comparison", `job-scraper-llm-vs-tradition`)* -
+    _web scrapping et LLM en local_ #python \  
+  - Objectifs : Automatiser l'extraction et le traitement d'offres d'emplois. Tester les performances d'un petit LLM versus les méthodes traditionnelles de traitement des données.
+  - Scrapper des données et rétro-ingénierie d'API publique
+  - Avec #link("https://www.langchain.com", `langchain`), #link("https://docs.crawl4ai.com", `crawl4ai`), #link("https://docs.pola.rs", `polars`)
+  ],
+  [_08/2025_]
 )
 
 
-#section("Compétences")
+#entry(
+  [
+    *#link("https://github.com/CalHenry/commit-ai", `commit-ai`)* -
+  _Assistant IA pour git commits_ #python\
+    - Objectifs : Développer un outil accessible dans le terminal qui génère un draft de commit via LLM local (éditable). Faire une interface CLI
+    - Avec #link("https://ollama.com", `ollama`) pour le LLM en local, #link("https://textual.textualize.io", `textual`) et #link("https://typer.tiangolo.com", `typer`) pour l'application CLI
+  ],
+  [_09/2025_],
+)
+
+#linebreak()
+
+#section(text(size: 14pt, [Compétences]))
+
 #table(
   align: left,
   columns: (auto, 1fr),
@@ -133,49 +183,16 @@
   [Github-pages, LaTeX, Typst, PackOffice],
 )
 
-// #pagebreak()
+#linebreak()
 
-#section("Projects personnels")
-
-#entry(
-  [
-    *#link("https://github.com/CalHenry/job-scraper-llm-comparison", `Wildchat-1M clustering`)* -
-    _NLP sur un dataset d'1 million de conversations ChatGPT _ #python \
-  - Objectifs : Segmenter les conversations par similitude sémantique. Optimiser le pipeline pour un volume de données supérieur à la RAM disponible.
-  - Librairies : #link("https://duckdb.org/", `Duckdb`), #link("https://docs.pola.rs", `polars`), #link("https://scikit-learn.org", `scikit-learn`)
-  ],
-  [_11/2025_]
-)
-
-#entry(
-  [
-    *#link("https://github.com/CalHenry/job-scraper-llm-comparison", `job-scraper-llm-vs-tradition`)* -
-    _web scrapping et LLM en local_ #python \
-  - Objectifs : Automatiser l'extraction et le traitement d'offres d'emplois. Tester les performances d'un petit LLM contre les méthodes traditionnelles de traitement des données.
-  - Scrapper des données et rétro-ingénierie d'API publique
-  - Avec #link("https://www.langchain.com", `langchain`), #link("https://docs.crawl4ai.com", `crawl4ai`), #link("https://docs.pola.rs", `polars`)
-  ],
-  [_08/2025_]
-)
-
-
-#entry(
-  [
-    *#link("https://github.com/CalHenry/commit-ai", `commit-ai`)* -
-  _Assistant IA pour git commits_ #python\
-    - Objectifs : Développer un outil accessible dans le terminal qui génère un draft de commit via LLM local (éditable). Faire une interface CLI
-    - Avec #link("https://ollama.com", `ollama`) pour le LLM en local, #link("https://textual.textualize.io", `textual`) et #link("https://typer.tiangolo.com", `typer`) pour l'application CLI
-  ],
-  [_09/2025_],
-)
-
-#section("Langues")
+#section(text(size: 14pt, [Langues]))
 
 - *Anglais* C1
 - *Espagnol* A2
 
+#linebreak()
 
-#section("Centre d'intérêts")
+#section(text(size: 14pt, [Centres d'intérêt]))
 
 - Escalade
 - Course à pied
