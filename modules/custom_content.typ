@@ -8,7 +8,7 @@
 
 // Add to existing list
 #let data_viz_extra = ("Plotly")
-#let ml_models = ("HuggingFace, XGBoost, LightGBM")
+#let ml_models = ("XGBoost")
 
 // Add inside list
 #let python_libs = "(pandas, numpy, polars)"

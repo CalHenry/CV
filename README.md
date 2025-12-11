@@ -1,6 +1,6 @@
 # **Curriculum Vitae**
 
-This is my CV made with [Typst](https://typst.app/home/)
+This is my CV made with [Typst](https://typst.app/home/) based on the template [cv-soft-hard](https://typst.app/universe/package/cv-soft-and-hard) by [Jonas Pleyer](https://github.com/jonaspleyer/cv-soft-and-hard).
 
 
 ![page 1](images/page1.svg)
