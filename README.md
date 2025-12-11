@@ -26,7 +26,7 @@ The files contains typst dictionnaries, below a brief example of this file:
   
 #let anom = (
     name: "name",
-    name_lower: "name_lower",
+    email: "some.random@mail.com",
 ```
 
 Then import the content to the main file: *I comment/ uncomment to select the content i want*
